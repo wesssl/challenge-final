@@ -41,19 +41,19 @@ As funcionalidades de alto risco serão mapeadas e priorizadas para testes e **a
 
 Nesta seção, farei uma breve análise das User Stories e seus Critérios de Aceite para uso posterior na elaboração dos testes API (tanto manuais quanto automatizados).
 
-Também elaborei um teste exploratório com uma timebox de 2:30h para me familiarizar com a aplicação e fazer uma checkagem inicial dos critérios de aceite. O teste alinha com os critérios de aceite, e a condição de sucesso é a conformidade com eles. <b>Obs.: O sucesso nessa etapa não indica ausência de falhas. Para referência, veja os resultados dos testes manuais e dos testes automatizados.</b>
+Também elaborei um teste exploratório com uma timebox de 2:30h para me familiarizar com a aplicação e fazer uma checkagem inicial dos critérios de aceite. O teste alinha com os critérios de aceite, e a condição de sucesso é a conformidade com eles. **Obs.: O sucesso nessa etapa não indica ausência de falhas. Para referência, veja os resultados dos testes manuais e dos testes automatizados.**
 
-**Papéis de Usuário**
-
-
-<b>Visitante:</b> Usuário não autenticado
-
-<b>Usuário:</b> Usuário regular autenticado
-
-<b>Administrador:</b> Usuário com privilégios de administrador.
+### Papéis de Usuário
 
 
-**User Stories e Testes**
+* **Visitante:** Usuário não autenticado
+
+* **Usuário:** Usuário regular autenticado
+
+* **Administrador:** Usuário com privilégios de administrador.
+
+
+### User Stories e Testes
 
 ```
 Informação do ambiente de testes
@@ -163,23 +163,21 @@ Teste Exploratório
 ```
 Critérios de Aceite
 
-Página inicial deve exibir banner do cinema
+    - Página inicial deve exibir banner do cinema
 
-Sessão destacada com filmes em cartaz
+    - Sessão destacada com filmes em cartaz
 
-Layout adaptável para vários dispositivos
+    - Layout adaptável para vários dispositivos
 
-Links rápidos para as principais áreas
+    - Links rápidos para as principais áreas
 
-Acesso rápido através do cabeçalho
+    - Acesso rápido através do cabeçalho
 
-Usuários autenticados veem opções personalizadas do menu
+    - Usuários autenticados veem opções personalizadas do menu
 
 Teste Exploratório
 
-Resposta Visual:
-
-Considerações finais: Sucesso
+    - Considerações finais: Sucesso
 ```
 
 * US-MOVIE-001 - Navegação da lista de filmes
@@ -318,11 +316,277 @@ Critérios de Aceite
 
 ## 4. Mapeamento dos Endpoints
 
+Durante o mapeamento, fiz um mapa-mental a mão para me familiarizar com a API. Após esse mapeamento, fiz um através de AI Generativa usando o próprio Swagger da aplicação em .pdf para melhor organização no plano de teste.
+
+### 1. Autenticação (**Auth API**)
+
+**POST** `/auth/register`: Register a new user
+* **Corpo da Requisição:** `name`, `email`, `password`.
+    * **Respostas:**
+        * `201`: User registered successfully
+        * `400`: User already exists or invalid data 
+
+**POST** `/auth/login`: Login a user
+* **Corpo da Requisição:** `email`, `password`.
+    * **Respostas:**
+        * `200`: Login successful 
+        * `400`: Invalid credentials
+
+**GET** `/auth/me`: Get current user profile
+* **Corpo da Requisição:** `Authorization`: Bearer token (header)
+    * **Respostas:**
+        * `200`: User profile data
+        * `401`: Not authorized, no token
+        * `403`: Not authorized, invalid token 
+
+**PUT** `/auth/profile`: Update user profile
+* **Corpo da Requisição:** `Authorization`: Bearer token (header), `name`, `currentPassword`, `newPassword`.
+    * **Respostas:**
+        * `200`: Profile updated successfully 
+        * `401`: Current password is incorrect 
+        * `404`: User not found
+
+### 2. Filmes (**Movies API**)
+
+**GET** `/movies`: Get all movies
+* **Corpo da Requisição:** `title` (query), `genre` (query), `sort` (query), `limit` (query), `page` (query)
+    * **Respostas:**
+        * `200`: List of movies
+
+**POST** `/movies`: Create a new movie
+* **Corpo da Requisição:** `Authorization`: Bearer token (header), `title`, `synopsis`, `director`, `genres`, `duration`, `classification`, `poster`, `releaseDate`.
+    * **Respostas:**
+        * `201`: Movie created successfully
+        * `400`: Invalid input data 
+        * `401`: Not authorized
+        * `403`: Forbidden - Admin access required
+
+**GET** `/movies/{id}`: Get a movie by ID
+* **Corpo da Requisição:** `id` (path).
+    * **Respostas:**
+        * `200`: Movie details 
+        * `400`: Invalid movie ID format 
+        * `404`: Movie not found 
+
+**PUT** `/movies/{id}`: Update a movie
+* **Corpo da Requisição:** `Authorization`: Bearer token (header), `id` (path), `title`, `synopsis`, `director`, `genres`, `duration`, `classification`, `poster`, `releaseDate`.
+    * **Respostas:**
+        * `200`: Movie updated successfully 
+        * `400`: Invalid input data
+        * `401`: Not authorized
+        * `403`: Forbidden - Admin access required
+        * `404`: Movie not found
+
+**DELETE** `/movies/{id}`: Delete a movie
+* **Corpo da Requisição:** `Authorization`: Bearer token (header), `id` (path).
+    * **Respostas:**
+        * `200`: Movie deleted successfully 
+        * `401`: Not authorized
+        * `403`: Forbidden - Admin access required
+        * `404`: Movie not found
+
+### 3. Reservas (**Reservations API**)
+
+**GET** `/reservations/me`: Get all reservations for the current user
+* **Corpo da Requisição:** `Authorization`: Bearer token (header).
+    * **Respostas:**
+        * `200`: User's reservations 
+        * `401`: Not authorized 
+
+**POST** `/reservations`: Create a new reservation
+* **Corpo da Requisição:** `Authorization`: Bearer token (header), `session`, `seats` (array de objetos com `row`, `number`, `type`), `paymentMethod`.
+    * **Respostas:**
+        * `201`: Reservation created successfully
+        * `400`: Invalid input data or seats already taken 
+        * `401`: Not authorized 
+        * `404`: Session not found 
+
+**GET** `/reservations`: Get all reservations (admin only)
+* **Corpo da Requisição:** `Authorization`: Bearer token (header), `page` (query), `limit` (query).
+    * **Respostas:**
+        * `200`: List of all reservations 
+        * `401`: Not authorized 
+        * `403`: Forbidden - Admin access required 
+
+**GET** `/reservations/{id}`: Get a reservation by ID
+* **Corpo da Requisição:** `Authorization`: Bearer token (header), `id` (path).
+    * **Respostas:**
+        * `200`: Reservation details 
+        * `401`: Not authorized 
+        * `404`: Reservation not found 
+
+**PUT** `/reservations/{id}`: Update reservation status (admin only)
+* **Corpo da Requisição:** `Authorization`: Bearer token (header), `id` (path), `status`, `paymentStatus`.
+    * **Respostas:**
+        * `200`: Reservation updated successfully 
+        * `400`: Invalid status transition 
+        * `401`: Not authorized 
+        * `403`: Forbidden - Admin access required 
+        * `404`: Reservation not found 
+
+**DELETE** `/reservations/{id}`: Delete a reservation (admin only)
+* **Corpo da Requisição:** `Authorization`: Bearer token (header), `id` (path).
+    * **Respostas:**
+        * `200`: Reservation deleted successfully
+        * `401`: Not authorized
+        * `403`: Forbidden - Admin access required 
+        * `404`: Reservation not found
+
+### 4. Sessões (**Sessions API**)
+
+**GET** `/sessions`: Get all movie sessions
+* **Corpo da Requisição:** `movie` (query), `theater` (query), `date` (query), `limit` (query), `page` (query).
+    * **Respostas:**
+        * `200`: List of movie sessions
+
+**POST** `/sessions`: Create a new session
+* **Corpo da Requisição:** `Authorization`: Bearer token (header), `movie`, `theater`, `datetime`, `fullPrice`, `halfPrice`.
+    * **Respostas:**
+        * `201`: Session created successfully
+        * `400`: Invalid input data
+        * `401`: Not authorized
+        * `403`: Forbidden - Admin access required
+        * `404`: Movie or Theater not found
+        * `409`: Session conflict (time overlap)
+
+**GET** `/sessions/{id}`: Get a session by ID
+* **Corpo da Requisição:** `id` (path).
+    * **Respostas:**
+        * `200`: Session details with populated movie and theater
+        * `404`: Session not found
+
+**PUT** `/sessions/{id}`: Update a session
+* **Corpo da Requisição:** `Authorization`: Bearer token (header), `id` (path), `movie`, `theater`, `datetime`, `fullPrice`, `halfPrice`.
+    * **Respostas:**
+        * `200`: Session updated successfully
+        * `400`: Invalid input data
+        * `401`: Not authorized
+        * `403`: Forbidden - Admin access required 
+        * `404`: Session not found 
+        * `409`: Session has reservations, cannot update 
+
+**DELETE** `/sessions/{id}`: Delete a session
+* **Corpo da Requisição:** `Authorization`: Bearer token (header), `id` (path).
+    * **Respostas:**
+        * `200`: Session deleted successfully 
+        * `401`: Not authorized 
+        * `403`: Forbidden - Admin access required 
+        * `404`: Session not found 
+        * `409`: Cannot delete session with confirmed reservations 
+
+**PUT** `/sessions/{id}/reset-seats`: Reset all seats in a session to available status
+* **Corpo da Requisição:** `Authorization`: Bearer token (header), `id` (path).
+    * **Respostas:**
+        * `200`: Seats reset successfully 
+        * `401`: Not authorized 
+        * `403`: Forbidden - Admin access required 
+        * `404`: Session not found 
+
+### 5. Configurações (**Setup Endpoints**)
+
+**POST** `/setup/admin`: Create admin user (development only)
+* **Corpo da Requisição:** `name`, `email`, `password`.
+    * **Respostas:**
+        * `201`: Admin user created successfully 
+        * `400`: Invalid input data or user already exists 
+        * `403`: Not available in production 
+
+**POST** `/setup/test-users`: Create default test users (development only)
+* **Corpo da Requisição:** Sem parâmetros.
+    * **Respostas:**
+        * `200`: Test users already exist 
+        * `201`: Test users created successfully 
+        * `403`: Not available in production 
+
+### 6. Teatros (**Theaters API**)
+
+**GET** `/theaters`: Get all theaters
+* **Corpo da Requisição:** `type` (query), `sort` (query), `limit` (query), `page` (query).
+    * **Respostas:**
+        * `200`: List of theaters 
+
+**POST** `/theaters`: Create a new theater
+* **Corpo da Requisição:** `Authorization`: Bearer token (header), `name`, `capacity`, `type`.
+    * **Respostas:**
+        * `201`: Theater created successfully 
+        * `400`: Invalid input data 
+        * `401`: Not authorized 
+        * `403`: Forbidden - Admin access required 
+        * `409`: Theater with that name already exists 
+
+**GET** `/theaters/{id}`: Get a theater by ID
+* **Corpo da Requisição:** `id` (path).
+    * **Respostas:**
+        * `200`: Theater details 
+        * `404`: Theater not found 
+
+**PUT** `/theaters/{id}`: Update a theater
+* **Corpo da Requisição:** `Authorization`: Bearer token (header), `id` (path), `name`, `capacity`, `type`.
+    * **Respostas:**
+        * `200`: Theater updated successfully 
+        * `400`: Invalid input data 
+        * `401`: Not authorized 
+        * `403`: Forbidden - Admin access required 
+        * `404`: Theater not found 
+        * `409`: Theater name already in use 
+
+**DELETE** `/theaters/{id}`: Delete a theater
+* **Corpo da Requisição:** `Authorization`: Bearer token (header), `id` (path).
+    * **Respostas:**
+        * `200`: Theater deleted successfully 
+        * `401`: Not authorized 
+        * `403`: Forbidden - Admin access required 
+        * `404`: Theater not found 
+        * `409`: Cannot delete theater with active sessions 
+
+### 7. Usuários (**Users API**)
+
+**GET** `/users`: Get all users
+* **Corpo da Requisição:** `Authorization`: Bearer token (header), `page` (query), `limit` (query), `role` (query).
+    * **Respostas:**
+        * `200`: List of users 
+        * `401`: Not authorized 
+        * `403`: Forbidden - Admin access required 
+
+**GET** `/users/{id}`: Get a user by ID
+* **Corpo da Requisição:** `Authorization`: Bearer token (header), `id` (path).
+    * **Respostas:**
+        * `200`: User details 
+        * `401`: Not authorized 
+        * `403`: Forbidden - Admin access required 
+        * `404`: User not found 
+
+**PUT** `/users/{id}`: Update a user
+* **Corpo da Requisição:** `Authorization`: Bearer token (header), `id` (path), `name`, `email`, `role`.
+    * **Respostas:**
+        * `200`: User updated successfully 
+        * `400`: Invalid input data 
+        * `401`: Not authorized 
+        * `403`: Forbidden - Admin access required 
+        * `404`: User not found 
+        * `409`: Email already in use 
+
+**DELETE** `/users/{id}`: Delete a user
+* **Corpo da Requisição:** `Authorization`: Bearer token (header), `id` (path).
+    * **Respostas:**
+        * `200`: User deleted successfully 
+        * `401`: Not authorized 
+        * `403`: Forbidden - Admin access required 
+        * `404`: User not found 
+        * `409`: Cannot delete user with active reservations 
+
+### 8. Informações da API (**API Info**)
+
+**GET** `/`: Get API information
+* **Corpo da Requisição:** Sem parâmetros.
+    * **Respostas:**
+        * `200`: API information and available endpoints 
+
 ## 5. Casos de Teste
 
-## 6. Testes Manuais com Postman
+## 6. Riscos do Produto e Priorização
 
-## 7. Riscos do Produto e Priorização
+## 7. Testes Manuais com Postman
 
 ## 8. Testes Automatizados (Robot Framework)
 
@@ -331,12 +595,20 @@ Critérios de Aceite
 ## 10. Cobertura
 
 ## 11. Cronograma
+
 | Atividade | Responsável | Início Estimado | Fim Estimado | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | Confeccão do Plano de Teste | Wesley | 30/09/2025 | 01/10/2025 | Em Andamento |
 | Análise inicial dos User Stories e Testes Exploratórios | Wesley | 01/10/2025 | 02/10/2025 | Tarefas Pendentes |
 | Mapeamento dos endpoints e Casos de Teste | Wesley | 02/10/2025 | 03/10/2025 | Tarefas Pendentes |
-| Testes Manuais com Postman | Wesley | 03/10/2025 | 04/10/2025 | Tarefas Pendentes |
-| Riscos do Produto e Priorização | Wesley | 04/10/2025 | 05/10/2025 | Tarefas Pendentes |
+| Riscos, Priorização e Testes Manuais com Postman | Wesley | 03/10/2025 | 06/10/2025 | Tarefas Pendentes |
 | Testes Automatizados (Robot Framework) | Wesley | 05/10/2025 | 10/10/2025 | Tarefas Pendentes |
-| Registro de Incidente (Bug Report) | Wesley | 08/10/2025 | 11/10/2025 | Tarefas Pendentes |
+| Registro de Incidente e Relatório | Wesley | 08/10/2025 | 11/10/2025 | Tarefas Pendentes |
+
+## 11. Histórico de uso de GenAI
+
+Nesta seção irei catalogar todos os casos de uso de GenAI durante a confecção do plano de teste e execução dos testes, para referência posterior.
+
+| Caso de Uso | Data | Usou arquivos complementares? | Precisou de correções? |
+| :--- | :--- | :--- | :--- |
+| Mapeamento dos endpoints | 01/09/2025 | SIM, swagger.pdf | SIM

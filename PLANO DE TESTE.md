@@ -43,7 +43,7 @@ Nesta seção, farei uma breve análise das **User Stories** e seus Critérios d
 Também elaborei um teste exploratório com uma timebox de 2:30h para me familiarizar com a aplicação e fazer uma checkagem inicial dos critérios de aceite. O teste alinha com os critérios de aceite, e a condição de sucesso é a conformidade com eles. **Obs.: O sucesso nessa etapa não indica ausência de falhas. Para referência, veja os resultados dos testes manuais e dos testes automatizados.**
 
 
-[Análise dos US e Testes Exploratórios](US-Testes-exploratorios)
+[Análise dos US e Testes Exploratórios](US-Testes-exploratorios.md)
 
 ## 4. Mapeamento dos Endpoints
 

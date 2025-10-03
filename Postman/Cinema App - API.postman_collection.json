@@ -1,0 +1,684 @@
+{
+	"info": {
+		"_postman_id": "5b49771e-d8d1-4c18-afd7-523b1af4857f",
+		"name": "Cinema App - API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45425348"
+	},
+	"item": [
+		{
+			"name": "Alta Prioridade",
+			"item": [
+				{
+					"name": "CT-AUTH-001",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {",
+									"    pm.expect(pm.response.code).to.equal(201);",
+									"});",
+									"",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"pm.test(\"Response has Content-Type header\", function () {",
+									"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.exist;",
+									"});",
+									"",
+									"pm.test(\"Response body is a JSON object\", function () {",
+									"    pm.expect(pm.response.json()).to.be.an(\"object\");",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"{{$randomFullName}}\",\n  \"email\": \"{{$randomEmail}}\",\n  \"password\": \"{{$randomPassword}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}auth/register",
+							"host": [
+								"{{baseurl}}auth"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CT-AUTH-003",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.expect(pm.response.code).to.equal(200);",
+									"});",
+									"",
+									"pm.test(\"Response has Content-Type header\", function () {",
+									"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.exist;",
+									"});",
+									"",
+									"pm.test(\"Response body is in JSON format\", function () {",
+									"    pm.expect(pm.response.text()).to.be.a('string');",
+									"});",
+									"",
+									"pm.test(\"Response has a token\", function () {",
+									"    const response = pm.response.json();",
+									"    pm.expect(response.data).to.have.property('token');",
+									"    pm.expect(response.data.token).to.be.a('string').that.is.not.empty;",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n    \"email\": \"wes@example.com\",\n    \"password\": \"password123\"\n}\t",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}auth/login/",
+							"host": [
+								"{{baseurl}}auth"
+							],
+							"path": [
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CT-MOVIES-001",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"const response = pm.response.json();",
+									"",
+									"pm.test(\"Response contains data with required fields\", function () {",
+									"    pm.expect(response.data).to.exist;",
+									"    pm.expect(response.data).to.be.an('array').that.is.not.empty;",
+									"",
+									"    response.data.forEach(movie => {",
+									"        pm.expect(movie).to.have.all.keys('_id', 'customId', 'title', 'synopsis', 'director', 'genres', 'duration', 'classification', 'poster', 'releaseDate', 'id');",
+									"    });",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}movies",
+							"host": [
+								"{{baseurl}}movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CT-MOVIES-006",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.expect(pm.response.code).to.equal(200);",
+									"});",
+									"",
+									"const response = pm.response.json();",
+									"",
+									"pm.test(\"Response contains data with sessions and seat information\", function () {",
+									"    pm.expect(response).to.have.property('data');",
+									"    pm.expect(response.data).to.have.property('sessions').that.is.an('array').that.is.not.empty;",
+									"",
+									"    response.data.sessions.forEach(session => {",
+									"        pm.expect(session).to.have.property('seats').that.is.an('array').that.is.not.empty;",
+									"",
+									"        session.seats.forEach(seat => {",
+									"            pm.expect(seat).to.have.all.keys('row', 'number', 'status');",
+									"            pm.expect(seat.row).to.be.a('string');",
+									"            pm.expect(seat.number).to.be.a('number');",
+									"            pm.expect(seat.status).to.be.oneOf(['available', 'occupied']);",
+									"        });",
+									"    });",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/movies/68d7221901f2a8b02b208587",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"movies",
+								"68d7221901f2a8b02b208587"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CT-SESSIONS-001",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json();",
+									"",
+									"// Check for successful response",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.expect(pm.response.code).to.equal(200);",
+									"});",
+									"",
+									"// Check for success flag",
+									"pm.test(\"Success flag is true\", function () {",
+									"    pm.expect(response.success).to.exist.and.to.equal(true);",
+									"});",
+									"",
+									"// Check for count of sessions",
+									"pm.test(\"Count is a number\", function () {",
+									"    pm.expect(response.count).to.exist.and.to.be.a('number');",
+									"});",
+									"",
+									"// Check pagination structure",
+									"pm.test(\"Pagination structure is valid\", function () {",
+									"    pm.expect(response.pagination).to.exist.and.to.be.an('object');",
+									"    pm.expect(response.pagination).to.have.property('next');",
+									"    pm.expect(response.pagination.next).to.have.all.keys('page', 'limit');",
+									"});",
+									"",
+									"// Check data array structure",
+									"pm.test(\"Data is an array\", function () {",
+									"    pm.expect(response.data).to.exist.and.to.be.an('array');",
+									"    response.data.forEach(session => {",
+									"        pm.expect(session).to.have.all.keys('_id', 'movie', 'theater', 'datetime', 'fullPrice', 'halfPrice', 'seats', 'createdAt', '__v', 'updatedAt', 'id');",
+									"        ",
+									"        // Check movie structure",
+									"        pm.expect(session.movie).to.have.all.keys('_id', 'title', 'duration', 'poster', 'id');",
+									"        ",
+									"        // Check theater structure",
+									"        pm.expect(session.theater).to.have.all.keys('_id', 'name', 'type', 'id');",
+									"        ",
+									"        // Check seats structure",
+									"        pm.expect(session.seats).to.be.an('array');",
+									"        session.seats.forEach(seat => {",
+									"            pm.expect(seat).to.have.all.keys('row', 'number', 'status');",
+									"        });",
+									"    });",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}sessions",
+							"host": [
+								"{{baseurl}}sessions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CT-SESSIONS-008",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json();",
+									"",
+									"// Test for successful response status code",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.expect(pm.response.code).to.equal(200);",
+									"});",
+									"",
+									"// Test for success property in response",
+									"pm.test(\"Response has success property\", function () {",
+									"    pm.expect(response).to.have.property(\"success\");",
+									"    pm.expect(response.success).to.equal(true);",
+									"});",
+									"",
+									"// Test for data structure",
+									"pm.test(\"Response has data property\", function () {",
+									"    pm.expect(response).to.have.property(\"data\");",
+									"    pm.expect(response.data).to.be.an(\"object\");",
+									"});",
+									"",
+									"// Test for movie object",
+									"pm.test(\"Movie object has required properties\", function () {",
+									"    const movie = response.data.movie;",
+									"    pm.expect(movie).to.have.all.keys(",
+									"        \"_id\",",
+									"        \"customId\",",
+									"        \"title\",",
+									"        \"synopsis\",",
+									"        \"director\",",
+									"        \"genres\",",
+									"        \"duration\",",
+									"        \"classification\",",
+									"        \"poster\",",
+									"        \"releaseDate\",",
+									"        \"createdAt\",",
+									"        \"__v\",",
+									"        \"updatedAt\",",
+									"        \"id\"",
+									"    );",
+									"});",
+									"",
+									"// Test for theater object",
+									"pm.test(\"Theater object has required properties\", function () {",
+									"    const theater = response.data.theater;",
+									"    pm.expect(theater).to.have.all.keys(",
+									"        \"_id\",",
+									"        \"name\",",
+									"        \"capacity\",",
+									"        \"type\",",
+									"        \"createdAt\",",
+									"        \"__v\",",
+									"        \"updatedAt\",",
+									"        \"id\"",
+									"    );",
+									"});",
+									"",
+									"// Test for seats array",
+									"pm.test(\"Seats array has required properties\", function () {",
+									"    const seats = response.data.seats;",
+									"    pm.expect(seats).to.be.an(\"array\");",
+									"",
+									"    seats.forEach(seat => {",
+									"        pm.expect(seat).to.have.all.keys(\"row\", \"number\", \"status\");",
+									"    });",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}sessions/68d7221901f2a8b02b20858f",
+							"host": [
+								"{{baseurl}}sessions"
+							],
+							"path": [
+								"68d7221901f2a8b02b20858f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CT-RESERVATIONS-002",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"// Postman Pre-request Script para autenticação e obtenção de token",
+									"const loginUrl = \"http://localhost:4173/api/v1/auth/login/\"",
+									"const loginBody = {",
+									"    \"email\": \"wes@example.com\",",
+									"    \"password\": \"password123\"",
+									"};",
+									"",
+									"const loginRequest = {",
+									"  url: loginUrl,",
+									"  method: 'POST',",
+									"  header: {",
+									"    'Content-Type': 'application/json'",
+									"  },",
+									"  body: JSON.stringify(loginBody)",
+									"};",
+									"",
+									"pm.sendRequest(loginRequest, (err, res) => {",
+									"    if (err) {",
+									"        console.error(\"Erro ao enviar a requisição de login: \", err);",
+									"        return;",
+									"    }",
+									"    ",
+									"    // Análise da resposta da requisição de login",
+									"    const responseData = res.json();",
+									"    ",
+									"    if (res.code === 200) {",
+									"        const token = responseData.data.token;",
+									"        // Armazena o token na variável de coleção",
+									"        pm.collectionVariables.set(\"bearerToken\", token);",
+									"        console.log(\"Token obtido e salvo na variável de coleção.\");",
+									"    } else {",
+									"        console.error(\"Falha no login. Resposta da API: \", responseData);",
+									"    }",
+									"});",
+									"",
+									"// Array com as letras das fileiras",
+									"const rows = [\"A\", \"B\", \"C\", \"D\", \"E\", \"F\", \"G\"];",
+									"",
+									"// Escolhe uma fileira aleatória do array",
+									"const randomRow = rows[Math.floor(Math.random() * rows.length)];",
+									"",
+									"// Escolhe um número aleatório entre 1 e 8",
+									"const randomNumber = Math.floor(Math.random() * 8) + 1;",
+									"",
+									"// Define as variáveis de ambiente com os valores aleatórios",
+									"pm.collectionVariables.set(\"randomRow\", randomRow);",
+									"pm.collectionVariables.set(\"randomNumber\", randomNumber);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json();",
+									"",
+									"// Test for status code",
+									"pm.test(\"Status code is 201\", function () {",
+									"    pm.expect(pm.response.code).to.equal(201);",
+									"});",
+									"",
+									"// Test for response structure",
+									"pm.test(\"Response has success property\", function () {",
+									"    pm.expect(response).to.have.property(\"success\");",
+									"    pm.expect(response.success).to.be.a(\"boolean\");",
+									"});",
+									"",
+									"pm.test(\"Response has data property\", function () {",
+									"    pm.expect(response).to.have.property(\"data\");",
+									"    pm.expect(response.data).to.be.an(\"object\");",
+									"});",
+									"",
+									"// Test for user property in data",
+									"pm.test(\"Data has user property\", function () {",
+									"    pm.expect(response.data).to.have.property(\"user\");",
+									"    pm.expect(response.data.user).to.be.a(\"string\");",
+									"});",
+									"",
+									"// Test for session property in data",
+									"pm.test(\"Data has session property\", function () {",
+									"    pm.expect(response.data).to.have.property(\"session\");",
+									"    pm.expect(response.data.session).to.be.an(\"object\");",
+									"});",
+									"",
+									"// Test for seats property in data",
+									"pm.test(\"Data has seats property\", function () {",
+									"    pm.expect(response.data).to.have.property(\"seats\");",
+									"    pm.expect(response.data.seats).to.be.an(\"array\");",
+									"    response.data.seats.forEach(seat => {",
+									"        pm.expect(seat).to.have.all.keys(\"row\", \"number\", \"type\");",
+									"        pm.expect(seat.row).to.be.a(\"string\");",
+									"        pm.expect(seat.number).to.be.a(\"number\");",
+									"        pm.expect(seat.type).to.be.a(\"string\");",
+									"    });",
+									"});",
+									"",
+									"// Test for totalPrice property in data",
+									"pm.test(\"Data has totalPrice property\", function () {",
+									"    pm.expect(response.data).to.have.property(\"totalPrice\");",
+									"    pm.expect(response.data.totalPrice).to.be.a(\"number\");",
+									"});",
+									"",
+									"// Test for paymentStatus property in data",
+									"pm.test(\"Data has paymentStatus property\", function () {",
+									"    pm.expect(response.data).to.have.property(\"paymentStatus\");",
+									"    pm.expect(response.data.paymentStatus).to.be.a(\"string\");",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n    \"session\": \"68d7221901f2a8b02b20858f\", \n    \"seats\": [ { \n        \"row\": \"{{randomRow}}\", \n        \"number\": {{randomNumber}}, \n        \"type\": \"full\" \n    } ], \n    \"paymentMethod\": \"credit_card\" \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}reservations",
+							"host": [
+								"{{baseurl}}reservations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CT-RESERVATIONS-003",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"// Postman Pre-request Script to make a reservation",
+									"const reservationUrl = \"http://localhost:4173/api/v1/reservations\";",
+									"const session = \"68d7221901f2a8b02b20858f\";",
+									"const seats = [{",
+									"    \"row\": \"A\",",
+									"    \"number\": 1,",
+									"    \"type\": \"full\"",
+									"}];",
+									"const paymentMethod = \"credit_card\";",
+									"",
+									"// Get the token from collection variables",
+									"const token = pm.collectionVariables.get(\"bearerToken\");",
+									"",
+									"// Create the reservation body",
+									"const reservationBody = {",
+									"    \"session\": session,",
+									"    \"seats\": seats,",
+									"    \"paymentMethod\": paymentMethod",
+									"};",
+									"",
+									"// Define the reservation request",
+									"const reservationRequest = {",
+									"    url: reservationUrl,",
+									"    method: 'POST',",
+									"    header: {",
+									"        'Content-Type': 'application/json',",
+									"        'Authorization': `Bearer ${token}`",
+									"    },",
+									"    body: JSON.stringify(reservationBody)",
+									"};",
+									"",
+									"// Send the reservation request",
+									"pm.sendRequest(reservationRequest, (reservationErr, reservationRes) => {",
+									"    if (reservationErr) {",
+									"        console.error(\"Erro ao enviar a requisição de reserva: \", reservationErr);",
+									"        return;",
+									"    }",
+									"    console.log(\"Reserva realizada com sucesso:\", reservationRes.json());",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.expect(pm.response.code).to.equal(400);",
+									"});",
+									"",
+									"pm.test(\"Response should be in JSON format\", function () {",
+									"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
+									"});",
+									"",
+									"const response = pm.response.json();",
+									"",
+									"pm.test(\"Response should indicate success as false\", function () {",
+									"    pm.expect(response.success).to.equal(false);",
+									"});",
+									"",
+									"pm.test(\"Response should contain a message\", function () {",
+									"    pm.expect(response.message).to.exist;",
+									"    pm.expect(response.message).to.be.a('string');",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n    \"session\": \"68d7221901f2a8b02b20858f\", \n    \"seats\": [ { \n        \"row\": \"A\", \n        \"number\": 1, \n        \"type\": \"full\" \n    } ], \n    \"paymentMethod\": \"credit_card\" \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}reservations",
+							"host": [
+								"{{baseurl}}reservations"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseurl",
+			"value": "http://localhost:4173/api/v1/",
+			"type": "string"
+		},
+		{
+			"key": "bearerToken",
+			"value": ""
+		},
+		{
+			"key": "randomRow",
+			"value": ""
+		},
+		{
+			"key": "randomNumber",
+			"value": ""
+		}
+	]
+}

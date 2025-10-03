@@ -165,6 +165,14 @@ Esses testes cobrem funcionalidades que são usadas internamente (por administra
 
 ## 7. Testes de API com Postman
 
+Realizei os testes manuais e automatizados para os endpoints da API, com foco nos casos de teste de alta prioridade definidos no meu plano. Para isso, utilizei o Postman como principal ferramenta de execução e automação.
+
+A execução dos testes de alta prioridade foi concluída com sucesso, validando a funcionalidade e a estabilidade dos principais fluxos de negócio da aplicação. Os resultados confirmaram que a API está se comportando como esperado, com respostas e códigos de status corretos em cenários de sucesso e de falha.
+
+[Report: Testes de API de Alta Prioridade](Postman/CinemaApp_HighPriority_Report.json)
+
+---
+
 ## 8. Testes Automatizados (Robot Framework)
 
 ## 9. Registro de Incidente (Bug Report)
@@ -190,3 +198,4 @@ Nesta seção irei catalogar todos os casos de uso de GenAI durante a confecçã
 | :--- | :--- | :--- | :--- |
 | Mapeamento dos endpoints | 01/09/2025 | swagger.pdf | SIM
 | Mapeamento dos casos de teste dos endpoints | 02/09/2025 | swagger.pdf, USER STORIES.md, PLANO DE TESTE.md | SIM
+| Desenvolvimento dos testes de API no Postman | 03/09/2025 | swagger.pdf, test-cases.md, PLANO DE TESTE.md, mapeamento-endpoints.md | SIM

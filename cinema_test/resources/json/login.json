@@ -1,0 +1,11 @@
+{
+    "login_valid":{
+        "email":"example@example.com",
+        "password":"password123"
+    },
+    "login_invalid":{
+        "email":"example@example.com",
+        "password":"password456"
+    }
+
+}

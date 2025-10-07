@@ -1,0 +1,10 @@
+{
+    "user_valid":{
+
+    },
+    "user_repeated":{
+        "name": "Example User",
+        "email": "example@example.com",
+        "password": "password123"
+    }
+}

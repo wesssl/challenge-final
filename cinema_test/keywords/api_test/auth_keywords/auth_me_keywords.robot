@@ -1,8 +1,8 @@
 *** Settings ***
 
 Resource    ../../../config/config.robot
-Resource    ../../../resources/base.robot
-Resource    ../../../resources/token.robot
+Resource    ../../../resources/robot/base.robot
+Resource    ../../../resources/robot/token.robot
 
 
 

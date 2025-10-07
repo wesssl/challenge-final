@@ -1,7 +1,7 @@
 *** Settings ***
 
 Resource    ../../../config/config.robot
-Resource    ../../../resources/base.robot
+Resource    ../../../resources/robot/base.robot
 
 
 *** Variables ***

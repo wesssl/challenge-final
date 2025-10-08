@@ -32,7 +32,7 @@ Obter Informações do Usuário
     ...  ELSE IF    '${testcase}' != 'token_valid'
     ...    Validar Falha na Requisição   ${response}
     
-    Log    Mensagem de status: ${response.json()}    console=True
+    Log    \nMensagem de status: ${response.json()}    console=True
     Log To Console    Status code: ${response.status_code}
 
 

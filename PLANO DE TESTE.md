@@ -67,6 +67,8 @@ Nessa seção irei mapear os casos de teste referentes a cada uma das possíveis
 
 Com base nos User Stories e no cronograma disposto, aqui analisarei os riscos e a priorização dos casos de teste, focando nos fluxos mais críticos para o negócio.
 
+[Priorização dos Casos de Teste](priorizacao-teste.md)
+
 ### Tabela de Riscos
 
 O fluxo de negócio mais importante nesse projeto é a jornada completa de um usuário, desde o registro/login até a conclusão de uma reserva. Portanto, as histórias de usuário relacionadas a esse fluxo principal terão a maior prioridade, visto que a matriz de risco prioriza esse fluxo.
@@ -83,89 +85,11 @@ O fluxo de negócio mais importante nesse projeto é a jornada completa de um us
 | Problemas de Permissão (Roles) | 3 (Média) | 4 (Alto) | 12 |
 | Performance Lenta na Carga de Dados | 2 (Baixa) | 3 (Médio) | 6 |
 
-### Prioridade Alta: Fluxo Principal do Usuário (Happy Path)
 
-Estes são os testes essenciais que garantem que o usuário possa realizar a ação principal do aplicativo: encontrar um filme, fazer uma reserva e pagar. Qualquer falha aqui impede o negócio de funcionar.
-
-* **Autenticação e Perfil**:
-
-    * `CT-AUTH-001`: Testar o cadastro de um novo usuário com dados válidos.
-
-    * `CT-AUTH-003`: Testar o login de um usuário com credenciais válidas.
-
-* **Visualização de Filmes e Sessões**:
-
-    * `CT-MOVIES-001`: Testar a listagem de todos os filmes sem filtros.
-
-    * `CT-MOVIES-006`: Testar a obtenção de detalhes de um filme por ID válido.
-
-    * `CT-SESSIONS-001`: Testar a listagem de todas as sessões de filmes.
-
-    * `CT-SESSIONS-008`: Testar a obtenção de detalhes de uma sessão por ID válido.
-
-* **Fluxo de Reserva:**
-
-    * `CT-RESERVATIONS-002`: Testar a criação de uma nova reserva com dados válidos.
-
-    * `CT-RESERVATIONS-003`: Testar a criação de uma reserva com dados inválidos ou assentos já ocupados.
-
-### 2. Prioridade Média: Fluxos Secundários e de Gestão de Usuário
-
-Esses testes garantem funcionalidades importantes que não impedem diretamente o fluxo de compra, mas são cruciais para a experiência do usuário e para o suporte.
-
-* **Autenticação e Perfil:**
-
-    * `CT-AUTH-004`: Testar o login de um usuário com credenciais inválidas.
-
-    * `CT-AUTH-005`: Testar a obtenção do perfil do usuário autenticado.
-
-    * `CT-AUTH-006`: Testar a obtenção do perfil do usuário sem token de autenticação.
-
-    * `CT-AUTH-007`: Testar a obtenção do perfil do usuário com token inválido.
-
-    * `CT-AUTH-008`: Testar a atualização do perfil de usuário com dados válidos.
-
-    * `CT-AUTH-009`: Testar a atualização do perfil com senha atual incorreta.
-
-* **Reservas e Visualização:**
-
-    * `CT-RESERVATIONS-001`: Testar a listagem de reservas do usuário autenticado.
-
-    * `CT-RESERVATIONS-004`: Testar a criação de uma reserva para uma sessão não encontrada.
-
-    * `CT-RESERVATIONS-009`: Testar a obtenção de detalhes de uma reserva não encontrada (Admin).
-
-* **Visualização de Filmes e Sessões:**
-
-    * `CT-MOVIES-007`: Testar a obtenção de detalhes de um filme com ID inválido.
-
-    * `CT-MOVIES-008`: Testar a obtenção de detalhes de um filme não encontrado.
-
-    * `CT-SESSIONS-009`: Testar a obtenção de detalhes de uma sessão não encontrada.
-
-### 3. Prioridade Baixa: Fluxos de Administração e Configuração
-
-Esses testes cobrem funcionalidades que são usadas internamente (por administradores) ou que se aplicam apenas ao ambiente de desenvolvimento. Eles podem ser deixados para o final, quando o fluxo principal já estiver estável.
-
-* **Gerenciamento de Filmes:**
-
-    * `CT-MOVIES-002` até `CT-MOVIES-017`: Todos os testes de criação, atualização e exclusão de filmes.
-
-* **Gerenciamento de Reservas (Admin):**
-
-    * `CT-RESERVATIONS-005` até `CT-RESERVATIONS-018` (exceto `CT-RESERVATIONS-009`, que é de prioridade média): Todos os testes de gerenciamento de reservas por administradores.
-
-* **Gerenciamento de Sessões, Teatros e Usuários:**
-
-    * Todos os testes de criação, atualização e exclusão de sessões, teatros e usuários (`CT-SESSIONS-002` a `CT-SESSIONS-024`, `CT-THEATERS-001` a `CT-THEATERS-019` e `CT-USERS-001` a `CT-USERS-018`).
-
-* **Endpoints de Configuração (Setup):**
-
-    * Todos os testes relacionados aos endpoints `/setup` (`CT-SETUP-001` até `CT-SETUP-006`).
 
 ## 7. Testes de API com Postman
 
-Realizei os testes manuais e automatizados para os endpoints da API, com foco nos casos de teste de alta prioridade definidos no meu plano. Para isso, utilizei o Postman como principal ferramenta de execução e automação.
+Realizei os testes manuais e automatizados para os endpoints da API, com foco nos casos de teste de alta prioridade definidos no meu plano. Para isso, utilizei o Postman como principal ferramenta de execução.
 
 A execução dos testes de alta prioridade foi concluída com sucesso, validando a funcionalidade e a estabilidade dos principais fluxos de negócio da aplicação. Os resultados confirmaram que a API está se comportando como esperado, com respostas e códigos de status corretos em cenários de sucesso e de falha.
 
@@ -186,8 +110,8 @@ A execução dos testes de alta prioridade foi concluída com sucesso, validando
 | Confeccão do Plano de Teste | Wesley | 30/09/2025 | 01/10/2025 | Concluído |
 | Análise inicial dos User Stories e Testes Exploratórios | Wesley | 01/10/2025 | 02/10/2025 | Concluído |
 | Mapeamento dos endpoints e Casos de Teste | Wesley | 02/10/2025 | 03/10/2025 | Concluído |
-| Riscos, Priorização e Testes de API com Postman | Wesley | 03/10/2025 | 06/10/2025 | Em Andamento |
-| Testes Automatizados (Robot Framework) | Wesley | 05/10/2025 | 10/10/2025 | Tarefas Pendentes |
+| Riscos, Priorização e Testes de API com Postman | Wesley | 03/10/2025 | 06/10/2025 | Concluído |
+| Testes Automatizados (Robot Framework) | Wesley | 05/10/2025 | 10/10/2025 | Em Andamento |
 | Registro de Incidente e Relatório | Wesley | 08/10/2025 | 11/10/2025 | Tarefas Pendentes |
 
 ## 12. Histórico de uso de GenAI

@@ -1,4 +1,4 @@
-# Casos de Teste
+# Casos de Teste de API
 
 | Código do Caso | Descrição do caso | Endpoint | Método | Autenticação | Resposta esperada |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -115,3 +115,26 @@
 | CT-USERS-017 | Testar a exclusão de um usuário não encontrado (Admin). | `/users/{id}` | DELETE | Sim (Admin Bearer Token) | `404`: User not found |
 | CT-USERS-018 | Testar a exclusão de um usuário com reservas ativas (Admin). | `/users/{id}` | DELETE | Sim (Admin Bearer Token) | `409`: Cannot delete user with active reservations |
 | CT-API-INFO-001 | Testar a obtenção de informações gerais da API. | `/` | GET | Não | `200`: API information and available endpoints |
+
+
+# Casos de Teste Web
+
+| Código do Caso | Descrição do caso | Pré-condições | Passos do Teste | Resultado Esperado |
+| :--- | :--- | :--- | :--- | :--- |
+| **CT-WEB-AUTH-001** | Testar o cadastro de um novo usuário com dados válidos. | O usuário está na página de registro. | 1. Preencher os campos `Nome`, `E-mail` e `Senha` com dados válidos. <br>2. Clicar no botão "Registrar". | O usuário é redirecionado para a página de login e vê uma mensagem de sucesso no cadastro. |
+| **CT-WEB-AUTH-002** | Testar o cadastro com um e-mail já existente. | O usuário está na página de registro. | 1. Preencher os campos com um e-mail já cadastrado. <br>2. Clicar em "Registrar". | O sistema exibe uma mensagem de erro informando que o e-mail já existe. |
+| **CT-WEB-AUTH-003** | Testar o login com credenciais válidas. | O usuário está na página de login. | 1. Inserir um e-mail e senha válidos. <br>2. Clicar no botão "Entrar". | O usuário é redirecionado para a página inicial com o menu de navegação personalizado. |
+| **CT-WEB-AUTH-004** | Testar o login com credenciais inválidas. | O usuário está na página de login. | 1. Inserir um e-mail ou senha incorretos. <br>2. Clicar no botão "Entrar". | O sistema exibe uma mensagem de erro de credenciais inválidas. |
+| **CT-WEB-AUTH-005** | Testar o logout da conta. | O usuário está logado. | 1. Clicar no link de "Logout" no menu de navegação. | O usuário é redirecionado para a página inicial e perde o acesso a rotas protegidas. O token JWT é removido do `localStorage`. |
+| **CT-WEB-AUTH-006** | Testar a visualização e atualização do nome de perfil. | O usuário está logado e na página de perfil. | 1. Acessar o campo de `Nome`. <br>2. Alterar o nome para um novo valor. <br>3. Salvar as alterações. | O sistema exibe uma mensagem de sucesso, e o nome atualizado é exibido na página. |
+| **CT-WEB-MOVIE-001** | Testar a exibição da página inicial. | O usuário acessa a URL principal da aplicação. | 1. Acessar a página inicial. | A página exibe um banner principal, a seção "Filmes em Cartaz" e links de navegação rápidos. |
+| **CT-WEB-MOVIE-002** | Testar a navegação da lista de filmes. | O usuário está na página inicial. | 1. Rolar a página para a seção de filmes. <br>2. Validar que cada card de filme possui título, classificação e gêneros. <br>3. Clicar em um card. | O card exibe o pôster do filme, e o usuário é redirecionado para a página de detalhes do filme. |
+| **CT-WEB-MOVIE-003** | Testar a exibição da página de detalhes do filme. | O usuário está na página de detalhes de um filme. | 1. Rolar a página. <br>2. Validar a presença de sinopse, elenco, diretor e a lista de sessões disponíveis. <br>3. Clicar em um horário de sessão. | O usuário é redirecionado para a página de seleção de assentos. |
+| **CT-WEB-MOVIE-004** | Testar a visualização dos horários de sessões. | O usuário está na página de detalhes de um filme. | 1. Acessar a seção de horários de sessões. | Os horários de sessões disponíveis exibem data, hora, teatro e disponibilidade. |
+| **CT-WEB-RESERVE-001** | Testar a seleção de assentos disponíveis. | O usuário está na página de seleção de assentos. | 1. Clicar em um assento disponível. <br>2. Clicar em um segundo assento disponível. <br>3. Validar que o subtotal é atualizado. | Os assentos selecionados mudam de cor e o subtotal da compra é exibido corretamente. |
+| **CT-WEB-RESERVE-002** | Testar a seleção de um assento já reservado. | O usuário está na página de seleção de assentos. | 1. Clicar em um assento marcado como "reservado". | O sistema não permite a seleção do assento, e o subtotal não é alterado. |
+| **CT-WEB-RESERVE-003** | Testar o processo de checkout. | O usuário já selecionou pelo menos um assento e está na página de checkout. | 1. Validar o resumo da compra (assentos e valor). <br>2. Selecionar um método de pagamento. <br>3. Clicar em "Finalizar Compra". | O sistema exibe uma mensagem de sucesso na reserva. |
+| **CT-WEB-RESERVE-004** | Testar a visualização das reservas. | O usuário está logado. | 1. Clicar no link "Minhas Reservas" no menu de navegação. | O usuário é redirecionado para a página de reservas, onde cada reserva é exibida em um card com as informações corretas (filme, data, horário, etc.). |
+| **CT-WEB-NAV-001** | Testar a navegação do cabeçalho em todas as páginas. | O usuário navega por várias páginas do site (inicial, filmes, perfil). | 1. Validar a presença do cabeçalho. <br>2. Clicar nos links de navegação. | Os links de navegação levam o usuário às páginas corretas, e o cabeçalho permanece visível em todas as páginas. |
+| **CT-WEB-NAV-002** | Testar a navegação em diferentes tamanhos de tela. | A aplicação está aberta em um dispositivo ou emulador de tela pequena (mobile). | 1. Navegar entre as páginas e funcionalidades. | O layout da aplicação se adapta à tela, e o menu de navegação é exibido corretamente (ex: menu hambúrguer). |
+| **CT-WEB-NAV-003** | Testar o acesso a rotas personalizadas. | O usuário está logado e o menu de navegação está visível. | 1. Clicar nos links "Minhas Reservas" e "Perfil". | O usuário é redirecionado para as páginas corretas sem erros de autenticação. |

@@ -31,11 +31,11 @@ Criar Novo Usuário
 
 
 
-   ${static}=     Criar DataMass de Novo Usuário Estatico    ${testcase}
-   ${body}=    Copy Dictionary    ${dynamic}    #substitui os campos estáticos do json para o body do request, mantendo os dinâmicos (aleatórios)
-   Set To Dictionary    ${body}    &{static}
+    ${static}=     Criar DataMass de Novo Usuário Estatico    ${testcase}
+    ${body}=    Copy Dictionary    ${dynamic}    #substitui os campos estáticos do json para o body do request, mantendo os dinâmicos (aleatórios)
+    Set To Dictionary    ${body}    &{static}
 
-   Log To Console    \nPayload: ${body}
+    Log To Console    \nPayload: ${body}
 
     Create Session    CinemaApp    ${BASEURL}
     ${response}=    POST On Session    CinemaApp    /auth/register    json=${body}    expected_status=any
@@ -45,7 +45,7 @@ Criar Novo Usuário
     ...  ELSE IF    '${testcase}' != 'user_valid'
     ...    Validar Falha No Cadastro   ${response}
     
-    Log    Mensagem de status: ${response.json()}    console=True
+    Log    \nMensagem de status: ${response.json()}    console=True
     Log To Console    Status code: ${response.status_code}
 
 Validar Sucesso No Cadastro

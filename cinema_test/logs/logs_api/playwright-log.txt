@@ -1,5 +1,5 @@
-{"level":30,"time":"2025-10-08T18:16:53.295Z","pid":1342,"hostname":"Wesleys-MacBook-Air.local","msg":"Listening on 127.0.0.1:52091"}
-(node:1342) DeprecationWarning: Calling start() is no longer necessary. It can be safely omitted.
+{"level":30,"time":"2025-10-09T20:33:21.479Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"Listening on 127.0.0.1:59235"}
+(node:18491) DeprecationWarning: Calling start() is no longer necessary. It can be safely omitted.
 (Use `node --trace-deprecation ...` to show where the warning was created)
 ================= Original suppressed error =================
 Error: Browser has been closed.
@@ -14,10 +14,10 @@ Error: Browser has been closed.
     at endReadableNT (node:internal/streams/readable:1698:12)
     at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
 =============================================================
-{"level":30,"time":"2025-10-08T18:16:54.389Z","pid":1342,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2025-10-08T18:16:54.390Z","pid":1342,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
-{"level":30,"time":"2025-10-08T18:16:54.395Z","pid":1342,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2025-10-08T18:16:54.395Z","pid":1342,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:22.565Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:22.565Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:22.570Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:22.570Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
 ================= Original suppressed error =================
 Error: Browser has been closed.
     at PlaywrightState.getActiveBrowser (/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/Browser/wrapper/index.js:12227:15)
@@ -31,10 +31,10 @@ Error: Browser has been closed.
     at endReadableNT (node:internal/streams/readable:1698:12)
     at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
 =============================================================
-{"level":30,"time":"2025-10-08T18:16:54.467Z","pid":1342,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2025-10-08T18:16:54.467Z","pid":1342,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
-{"level":30,"time":"2025-10-08T18:16:54.469Z","pid":1342,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2025-10-08T18:16:54.469Z","pid":1342,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:22.637Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:22.637Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:22.638Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:22.638Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
 ================= Original suppressed error =================
 Error: Browser has been closed.
     at PlaywrightState.getActiveBrowser (/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/Browser/wrapper/index.js:12227:15)
@@ -48,10 +48,10 @@ Error: Browser has been closed.
     at endReadableNT (node:internal/streams/readable:1698:12)
     at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
 =============================================================
-{"level":30,"time":"2025-10-08T18:16:54.604Z","pid":1342,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2025-10-08T18:16:54.604Z","pid":1342,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
-{"level":30,"time":"2025-10-08T18:16:54.605Z","pid":1342,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2025-10-08T18:16:54.605Z","pid":1342,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:22.771Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:22.771Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:22.772Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:22.772Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
 ================= Original suppressed error =================
 Error: Browser has been closed.
     at PlaywrightState.getActiveBrowser (/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/Browser/wrapper/index.js:12227:15)
@@ -65,10 +65,10 @@ Error: Browser has been closed.
     at endReadableNT (node:internal/streams/readable:1698:12)
     at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
 =============================================================
-{"level":30,"time":"2025-10-08T18:16:54.721Z","pid":1342,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2025-10-08T18:16:54.721Z","pid":1342,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
-{"level":30,"time":"2025-10-08T18:16:54.721Z","pid":1342,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2025-10-08T18:16:54.721Z","pid":1342,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:22.887Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:22.887Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:22.888Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:22.888Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
 ================= Original suppressed error =================
 Error: Browser has been closed.
     at PlaywrightState.getActiveBrowser (/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/Browser/wrapper/index.js:12227:15)
@@ -82,10 +82,10 @@ Error: Browser has been closed.
     at endReadableNT (node:internal/streams/readable:1698:12)
     at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
 =============================================================
-{"level":30,"time":"2025-10-08T18:16:54.943Z","pid":1342,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2025-10-08T18:16:54.943Z","pid":1342,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
-{"level":30,"time":"2025-10-08T18:16:54.944Z","pid":1342,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2025-10-08T18:16:54.944Z","pid":1342,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:23.104Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:23.104Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:23.105Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:23.105Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
 ================= Original suppressed error =================
 Error: Browser has been closed.
     at PlaywrightState.getActiveBrowser (/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/Browser/wrapper/index.js:12227:15)
@@ -99,10 +99,10 @@ Error: Browser has been closed.
     at endReadableNT (node:internal/streams/readable:1698:12)
     at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
 =============================================================
-{"level":30,"time":"2025-10-08T18:16:54.952Z","pid":1342,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2025-10-08T18:16:54.952Z","pid":1342,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
-{"level":30,"time":"2025-10-08T18:16:54.952Z","pid":1342,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2025-10-08T18:16:54.952Z","pid":1342,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:23.112Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:23.112Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:23.113Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:23.113Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
 ================= Original suppressed error =================
 Error: Browser has been closed.
     at PlaywrightState.getActiveBrowser (/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/Browser/wrapper/index.js:12227:15)
@@ -116,10 +116,10 @@ Error: Browser has been closed.
     at endReadableNT (node:internal/streams/readable:1698:12)
     at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
 =============================================================
-{"level":30,"time":"2025-10-08T18:16:54.959Z","pid":1342,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2025-10-08T18:16:54.959Z","pid":1342,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
-{"level":30,"time":"2025-10-08T18:16:54.960Z","pid":1342,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2025-10-08T18:16:54.960Z","pid":1342,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:23.119Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:23.119Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:23.120Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:23.120Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
 ================= Original suppressed error =================
 Error: Browser has been closed.
     at PlaywrightState.getActiveBrowser (/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/Browser/wrapper/index.js:12227:15)
@@ -133,10 +133,10 @@ Error: Browser has been closed.
     at endReadableNT (node:internal/streams/readable:1698:12)
     at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
 =============================================================
-{"level":30,"time":"2025-10-08T18:16:55.066Z","pid":1342,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2025-10-08T18:16:55.066Z","pid":1342,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
-{"level":30,"time":"2025-10-08T18:16:55.067Z","pid":1342,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2025-10-08T18:16:55.067Z","pid":1342,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:23.222Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:23.222Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:23.223Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:23.223Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
 ================= Original suppressed error =================
 Error: Browser has been closed.
     at PlaywrightState.getActiveBrowser (/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/Browser/wrapper/index.js:12227:15)
@@ -150,10 +150,10 @@ Error: Browser has been closed.
     at endReadableNT (node:internal/streams/readable:1698:12)
     at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
 =============================================================
-{"level":30,"time":"2025-10-08T18:16:55.433Z","pid":1342,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2025-10-08T18:16:55.433Z","pid":1342,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
-{"level":30,"time":"2025-10-08T18:16:55.434Z","pid":1342,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2025-10-08T18:16:55.434Z","pid":1342,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:23.592Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:23.592Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:23.593Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:23.593Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
 ================= Original suppressed error =================
 Error: Browser has been closed.
     at PlaywrightState.getActiveBrowser (/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/Browser/wrapper/index.js:12227:15)
@@ -167,10 +167,10 @@ Error: Browser has been closed.
     at endReadableNT (node:internal/streams/readable:1698:12)
     at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
 =============================================================
-{"level":30,"time":"2025-10-08T18:16:55.607Z","pid":1342,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2025-10-08T18:16:55.607Z","pid":1342,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
-{"level":30,"time":"2025-10-08T18:16:55.609Z","pid":1342,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2025-10-08T18:16:55.609Z","pid":1342,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:23.965Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:23.965Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:23.967Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:23.967Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
 ================= Original suppressed error =================
 Error: Browser has been closed.
     at PlaywrightState.getActiveBrowser (/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/Browser/wrapper/index.js:12227:15)
@@ -184,8 +184,10 @@ Error: Browser has been closed.
     at endReadableNT (node:internal/streams/readable:1698:12)
     at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
 =============================================================
-{"level":30,"time":"2025-10-08T18:16:55.672Z","pid":1342,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2025-10-08T18:16:55.672Z","pid":1342,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:24.030Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:24.030Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:24.031Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:24.032Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
 ================= Original suppressed error =================
 Error: Browser has been closed.
     at PlaywrightState.getActiveBrowser (/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/Browser/wrapper/index.js:12227:15)
@@ -199,7 +201,39 @@ Error: Browser has been closed.
     at endReadableNT (node:internal/streams/readable:1698:12)
     at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
 =============================================================
-{"level":30,"time":"2025-10-08T18:16:55.675Z","pid":1342,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2025-10-08T18:16:55.675Z","pid":1342,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
-{"level":30,"time":"2025-10-08T18:16:55.699Z","pid":1342,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method closeAllBrowsers"}
-{"level":30,"time":"2025-10-08T18:16:55.700Z","pid":1342,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method closeAllBrowsers"}
+{"level":30,"time":"2025-10-09T20:33:24.496Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:24.497Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:24.499Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:24.499Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
+================= Original suppressed error =================
+Error: Browser has been closed.
+    at PlaywrightState.getActiveBrowser (/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/Browser/wrapper/index.js:12227:15)
+    at PlaywrightServer.getActiveBrowser (/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/Browser/wrapper/index.js:13124:59)
+    at PlaywrightServer.setTimeout (/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/Browser/wrapper/index.js:13372:57)
+    at Object.onReceiveHalfClose (/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server.js:1461:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:575:31)
+    at BaseServerInterceptingCall.handleEndEvent (/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:615:14)
+    at ServerHttp2Stream.<anonymous> (/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:382:18)
+    at ServerHttp2Stream.emit (node:events:530:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+=============================================================
+{"level":30,"time":"2025-10-09T20:33:24.743Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:24.743Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
+================= Original suppressed error =================
+Error: Browser has been closed.
+    at PlaywrightState.getActiveBrowser (/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/Browser/wrapper/index.js:12227:15)
+    at PlaywrightServer.getActiveBrowser (/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/Browser/wrapper/index.js:13124:59)
+    at PlaywrightServer.setTimeout (/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/Browser/wrapper/index.js:13372:57)
+    at Object.onReceiveHalfClose (/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server.js:1461:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:575:31)
+    at BaseServerInterceptingCall.handleEndEvent (/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:615:14)
+    at ServerHttp2Stream.<anonymous> (/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:382:18)
+    at ServerHttp2Stream.emit (node:events:530:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+=============================================================
+{"level":30,"time":"2025-10-09T20:33:24.745Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:24.745Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-09T20:33:24.768Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method closeAllBrowsers"}
+{"level":30,"time":"2025-10-09T20:33:24.769Z","pid":18491,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method closeAllBrowsers"}

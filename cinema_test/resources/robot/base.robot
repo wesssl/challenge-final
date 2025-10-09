@@ -13,4 +13,4 @@ Acessar URL
     [Arguments]     ${url}=
     New Browser     browser=chromium    headless=false
 
-    New Page        ${BASEURL}${url}
+    New Page        ${BASEURLWEB}${url}

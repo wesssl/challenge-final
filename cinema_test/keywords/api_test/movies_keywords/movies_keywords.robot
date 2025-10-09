@@ -28,12 +28,12 @@ Obter Informação de Filme por ID
 
 Validar Sucesso na Requisição
     [Arguments]    ${response}
-    Run Keyword And Continue On Failure     Should Be True    ${response.status_code}    [200]
+    Run Keyword And Continue On Failure     Should Be Equal As Integers    ${response.status_code}    200
 
 Validar Falha na Requisição
     [Arguments]    ${response}
     ${status_code}=    Convert To Integer    ${response.status_code}
-    Run Keyword And Continue On Failure    Should Be True    ${response.status_code} in [400]
+    Run Keyword And Continue On Failure    Should Be Equal As Integers    ${response.status_code}    400
 
 Validar se Response é JSON
     [Arguments]    ${response}

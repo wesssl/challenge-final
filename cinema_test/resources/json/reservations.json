@@ -1,0 +1,17 @@
+{
+    "reservations01":{
+        "session": "68d7221901f2a8b02b208590"
+    },
+    "reservations02":{
+        "session": "68d7221901f2a8b02b208590",
+        "seats":[
+            {
+                "row": "A",
+                "number": 1,
+                "type": "full"
+            }
+        ],
+        "paymentMethod": "credit_card"
+    }
+
+}

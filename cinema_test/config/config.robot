@@ -6,12 +6,14 @@ Library    FakerLibrary
 Library    OperatingSystem
 Library    JSONLibrary
 Library    String
+Library    Browser
 
 
 
 *** Variables ***
 
 ${BASEURL}    http://localhost:4173/api/v1
+${BASEURLWEB}    http://localhost:4173/
 
 *** Keywords ***
 

@@ -98,7 +98,7 @@ Esses testes cobrem funcionalidades que são usadas internamente (por administra
 
     * `CT-WEB-RESERVE-003`: Processo de checkout e finalização da compra.
 
-    * `CT-WEB-NAV-001: Navegação geral do cabeçalho.
+    * `CT-WEB-NAV-001`: Navegação geral do cabeçalho.
 
 * **Prioridade Média**: Esses testes cobrem cenários de falha comuns e funcionalidades que, embora importantes para a experiência do usuário, não interrompem o fluxo principal de receita.
 

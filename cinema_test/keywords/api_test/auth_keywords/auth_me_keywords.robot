@@ -20,8 +20,10 @@ Obter Informações do Usuário
 
     IF    '${testcase}' == 'token_valid'
         ${BEARER}=    Gerar Novo Token
-    ELSE IF    '${testcase}' == 'token_valid'
-        ${BEARER}=    Set Variable    '34u83873894'
+    ELSE IF    '${testcase}' == 'token_wrong'
+        ${BEARER}=    Set Variable    Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZTU2YWY5OTVmMDVjMTY5NGQ5NTY4YyIsImlhdCI6MTc2MDAzODk2MSwiZXhwIjoxNzYwMTI1MzYxfQ.jhaVhMuWOnN0WeNS3V_YVd6F-prsCj8euouz2LN2GP6
+    ELSE IF     '${testcase}' == 'token_notoken'
+        ${BEARER}=    Set Variable    ''
     END
 
     Create Session    CinemaApp    ${BASEURL}
@@ -29,8 +31,10 @@ Obter Informações do Usuário
     ${response}=    GET On Session        CinemaApp    /auth/me    headers=${headers}    expected_status=any
     Run Keyword If    '${testcase}' == 'token_valid'     #validação dos testes
     ...    Validar Sucesso na Requisição    ${response}
-    ...  ELSE IF    '${testcase}' != 'token_valid'
-    ...    Validar Falha na Requisição   ${response}
+    ...  ELSE IF    '${testcase}' == 'token_notoken'
+    ...    Validar Falha 401 na Requisição   ${response}
+    ...  ELSE IF    '${testcase}' == 'token_wrong'
+    ...    Validar Falha 403 na Requisição   ${response}
     
     Log    \nMensagem de status: ${response.json()}    console=True
     Log To Console    Status code: ${response.status_code}
@@ -40,7 +44,10 @@ Validar Sucesso na Requisição
     [Arguments]    ${response}
     Run Keyword And Continue On Failure     Should Be Equal As Integers    ${response.status_code}    200
 
-Validar Falha na Requisição
+Validar Falha 401 na Requisição
     [Arguments]    ${response}
-    ${status_code}=    Convert To Integer    ${response.status_code}
-    Run Keyword And Continue On Failure    Should Be True    ${status_code} in [400, 401]
+    Run Keyword And Continue On Failure     Should Be Equal As Integers    ${response.status_code}    401
+ 
+ Validar Falha 403 na Requisição
+    [Arguments]    ${response}
+    Run Keyword And Continue On Failure     Should Be Equal As Integers    ${response.status_code}    403

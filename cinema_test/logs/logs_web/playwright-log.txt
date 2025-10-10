@@ -1,0 +1,121 @@
+{"level":30,"time":"2025-10-10T06:10:30.459Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Listening on 127.0.0.1:53766"}
+(node:46155) DeprecationWarning: Calling start() is no longer necessary. It can be safely omitted.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{"level":30,"time":"2025-10-10T06:10:31.557Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method newBrowser"}
+{"level":30,"time":"2025-10-10T06:10:32.327Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Adding browser to stack: chromium, version: 140.0.7339.16"}
+{"level":30,"time":"2025-10-10T06:10:32.328Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method newBrowser"}
+{"level":30,"time":"2025-10-10T06:10:32.328Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Adding 0 contexts to browser"}
+{"level":30,"time":"2025-10-10T06:10:32.331Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method newPage"}
+{"level":30,"time":"2025-10-10T06:10:32.331Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"currentBrowser: {\"name\":\"chromium\",\"browser\":{\"_type\":\"Browser\",\"_guid\":\"browser@e9d0d0246d4ca3d3e646601d0b6d4c29\"},\"headless\":false,\"_contextStack\":[],\"id\":\"browser=4f6651b4-ae74-4dd6-96c9-6a71280837a8\"}"}
+{"level":30,"time":"2025-10-10T06:10:32.346Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Setting default timeout for context context=84ce096b-42fd-4956-9d47-186ccc09319c to 10000"}
+{"level":30,"time":"2025-10-10T06:10:32.346Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Changed active context: context=84ce096b-42fd-4956-9d47-186ccc09319c"}
+{"level":30,"time":"2025-10-10T06:10:32.667Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Video path: undefined"}
+{"level":30,"time":"2025-10-10T06:10:32.667Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Changed active page"}
+{"level":30,"time":"2025-10-10T06:10:33.031Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method newPage"}
+{"level":30,"time":"2025-10-10T06:10:33.036Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-10-10T06:10:33.037Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Strict mode is enabled, find Locator with xpath=//h1[text()='Cadastro'] in page."}
+{"level":30,"time":"2025-10-10T06:10:33.085Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-10-10T06:10:33.088Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getText"}
+{"level":30,"time":"2025-10-10T06:10:33.088Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Strict mode is enabled, find Locator with xpath=//h1[text()='Cadastro'] in page."}
+{"level":30,"time":"2025-10-10T06:10:33.102Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Retrieved text for element xpath=//h1[text()='Cadastro'] containing Cadastro"}
+{"level":30,"time":"2025-10-10T06:10:33.102Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getText"}
+{"level":30,"time":"2025-10-10T06:10:33.106Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-10-10T06:10:33.106Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Strict mode is enabled, find Locator with xpath=//*[@id=\"name\"] in page."}
+{"level":30,"time":"2025-10-10T06:10:33.114Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method fillText"}
+{"level":30,"time":"2025-10-10T06:10:33.116Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-10-10T06:10:33.116Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Strict mode is enabled, find Locator with xpath=//*[@id=\"email\"] in page."}
+{"level":30,"time":"2025-10-10T06:10:33.120Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method fillText"}
+{"level":30,"time":"2025-10-10T06:10:33.122Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-10-10T06:10:33.122Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Strict mode is enabled, find Locator with xpath=//*[@id=\"password\"] in page."}
+{"level":30,"time":"2025-10-10T06:10:33.128Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method fillText"}
+{"level":30,"time":"2025-10-10T06:10:33.130Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-10-10T06:10:33.130Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Strict mode is enabled, find Locator with xpath=//*[@id=\"confirmPassword\"] in page."}
+{"level":30,"time":"2025-10-10T06:10:33.133Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method fillText"}
+{"level":30,"time":"2025-10-10T06:10:33.135Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method click"}
+{"level":30,"time":"2025-10-10T06:10:33.135Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Strict mode is enabled, find Locator with xpath=//*[@type=\"submit\"] in page."}
+{"level":30,"time":"2025-10-10T06:10:33.169Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method click"}
+{"level":30,"time":"2025-10-10T06:10:38.177Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-10-10T06:10:38.178Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Strict mode is enabled, find Locator with xpath=//div[text()='Conta criada com sucesso!'] in page."}
+{"level":30,"time":"2025-10-10T06:10:38.180Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-10-10T06:10:38.183Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getText"}
+{"level":30,"time":"2025-10-10T06:10:38.183Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Strict mode is enabled, find Locator with xpath=//div[text()='Conta criada com sucesso!'] in page."}
+{"level":30,"time":"2025-10-10T06:10:38.189Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Retrieved text for element xpath=//div[text()='Conta criada com sucesso!'] containing Conta criada com sucesso!"}
+{"level":30,"time":"2025-10-10T06:10:38.189Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getText"}
+{"level":30,"time":"2025-10-10T06:10:38.191Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method closeBrowser"}
+{"level":30,"time":"2025-10-10T06:10:38.225Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Removed page=562b2f13-f6e4-43e1-97ec-ed542e755982 from context=84ce096b-42fd-4956-9d47-186ccc09319c page stack"}
+{"level":30,"time":"2025-10-10T06:10:38.359Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method closeBrowser"}
+================= Original suppressed error =================
+Error: Browser has been closed.
+    at PlaywrightState.getActiveBrowser (/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/Browser/wrapper/index.js:12227:15)
+    at PlaywrightServer.getActiveBrowser (/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/Browser/wrapper/index.js:13124:59)
+    at PlaywrightServer.setTimeout (/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/Browser/wrapper/index.js:13372:57)
+    at Object.onReceiveHalfClose (/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server.js:1461:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:575:31)
+    at BaseServerInterceptingCall.handleEndEvent (/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:615:14)
+    at ServerHttp2Stream.<anonymous> (/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:382:18)
+    at ServerHttp2Stream.emit (node:events:530:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+=============================================================
+{"level":30,"time":"2025-10-10T06:10:38.361Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-10T06:10:38.361Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-10T06:10:38.362Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-10T06:10:38.362Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-10T06:10:38.364Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method newBrowser"}
+{"level":30,"time":"2025-10-10T06:10:38.583Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Adding browser to stack: chromium, version: 140.0.7339.16"}
+{"level":30,"time":"2025-10-10T06:10:38.583Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method newBrowser"}
+{"level":30,"time":"2025-10-10T06:10:38.583Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Adding 0 contexts to browser"}
+{"level":30,"time":"2025-10-10T06:10:38.588Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method newPage"}
+{"level":30,"time":"2025-10-10T06:10:38.588Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"currentBrowser: {\"name\":\"chromium\",\"browser\":{\"_type\":\"Browser\",\"_guid\":\"browser@c002a0d4e7975b4c27570327057b2f05\"},\"headless\":false,\"_contextStack\":[],\"id\":\"browser=8ffdab5a-a4da-479f-984b-563816cc50f3\"}"}
+{"level":30,"time":"2025-10-10T06:10:38.591Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Setting default timeout for context context=e0ee9c25-8e53-408d-bbff-571aab6cfecd to 10000"}
+{"level":30,"time":"2025-10-10T06:10:38.591Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Changed active context: context=e0ee9c25-8e53-408d-bbff-571aab6cfecd"}
+{"level":30,"time":"2025-10-10T06:10:38.727Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Video path: undefined"}
+{"level":30,"time":"2025-10-10T06:10:38.728Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Changed active page"}
+{"level":30,"time":"2025-10-10T06:10:39.064Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method newPage"}
+{"level":30,"time":"2025-10-10T06:10:39.069Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-10-10T06:10:39.069Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Strict mode is enabled, find Locator with xpath=//h1[text()='Cadastro'] in page."}
+{"level":30,"time":"2025-10-10T06:10:39.106Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-10-10T06:10:39.109Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getText"}
+{"level":30,"time":"2025-10-10T06:10:39.109Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Strict mode is enabled, find Locator with xpath=//h1[text()='Cadastro'] in page."}
+{"level":30,"time":"2025-10-10T06:10:39.120Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Retrieved text for element xpath=//h1[text()='Cadastro'] containing Cadastro"}
+{"level":30,"time":"2025-10-10T06:10:39.120Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getText"}
+{"level":30,"time":"2025-10-10T06:10:39.124Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-10-10T06:10:39.124Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Strict mode is enabled, find Locator with xpath=//*[@id=\"name\"] in page."}
+{"level":30,"time":"2025-10-10T06:10:39.130Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method fillText"}
+{"level":30,"time":"2025-10-10T06:10:39.132Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-10-10T06:10:39.133Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Strict mode is enabled, find Locator with xpath=//*[@id=\"email\"] in page."}
+{"level":30,"time":"2025-10-10T06:10:39.136Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method fillText"}
+{"level":30,"time":"2025-10-10T06:10:39.138Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-10-10T06:10:39.138Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Strict mode is enabled, find Locator with xpath=//*[@id=\"password\"] in page."}
+{"level":30,"time":"2025-10-10T06:10:39.144Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method fillText"}
+{"level":30,"time":"2025-10-10T06:10:39.146Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-10-10T06:10:39.146Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Strict mode is enabled, find Locator with xpath=//*[@id=\"confirmPassword\"] in page."}
+{"level":30,"time":"2025-10-10T06:10:39.149Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method fillText"}
+{"level":30,"time":"2025-10-10T06:10:39.150Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method click"}
+{"level":30,"time":"2025-10-10T06:10:39.150Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Strict mode is enabled, find Locator with xpath=//*[@type=\"submit\"] in page."}
+{"level":30,"time":"2025-10-10T06:10:39.191Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method click"}
+{"level":30,"time":"2025-10-10T06:10:44.202Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-10-10T06:10:44.202Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Strict mode is enabled, find Locator with xpath=//div[text()='User already exists'] in page."}
+{"level":30,"time":"2025-10-10T06:10:44.206Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-10-10T06:10:44.210Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getText"}
+{"level":30,"time":"2025-10-10T06:10:44.210Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Strict mode is enabled, find Locator with xpath=//div[text()='User already exists'] in page."}
+{"level":30,"time":"2025-10-10T06:10:44.217Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Retrieved text for element xpath=//div[text()='User already exists'] containing User already exists"}
+{"level":30,"time":"2025-10-10T06:10:44.217Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getText"}
+{"level":30,"time":"2025-10-10T06:10:44.220Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-10T06:10:44.221Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-10T06:10:44.221Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-10T06:10:44.222Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-10T06:10:44.223Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-10T06:10:44.224Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-10T06:10:44.225Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-10T06:10:44.225Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-10T06:10:44.226Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Changed active context: context=e0ee9c25-8e53-408d-bbff-571aab6cfecd"}
+{"level":30,"time":"2025-10-10T06:10:44.226Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Changing current active page: page=26b980a2-26e8-459a-9252-5d4d096074a6"}
+{"level":30,"time":"2025-10-10T06:10:44.226Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Changed active page"}
+{"level":30,"time":"2025-10-10T06:10:44.234Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method closeContext"}
+{"level":30,"time":"2025-10-10T06:10:44.244Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Removed page=5882756c-be22-4a64-9de7-6298bcf03c1b from context=e0ee9c25-8e53-408d-bbff-571aab6cfecd page stack"}
+{"level":30,"time":"2025-10-10T06:10:44.267Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method closeContext"}
+{"level":30,"time":"2025-10-10T06:10:44.269Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-10T06:10:44.269Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-10-10T06:10:44.283Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"Start of node method closeAllBrowsers"}
+{"level":30,"time":"2025-10-10T06:10:44.372Z","pid":46155,"hostname":"Wesleys-MacBook-Air.local","msg":"End of node method closeAllBrowsers"}

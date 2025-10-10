@@ -2,8 +2,9 @@
 
 Challenge final. Projeto desenvolvido para a conclusão do Programa de Bolsas da empresa Compass UOL. Trilha "AWS, AI & Software Quality Engineering".
 
-
+Autor: Wesley Lima
 ## [PLANO DE TESTE](PLANO%20DE%20TESTE.md)
+
 
 ## **Informações de Execução**
 

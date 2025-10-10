@@ -1,30 +1,51 @@
 ## Report de Bugs
 
-BUG-001
+** Relatório de Bugs ** 
 
-**ID do Incidente**: `Sequencial e Único`
+* BUG-001
 
-**Título**: `Resumo conciso do bug, ex: "Falha ao logar com credenciais válidas"`
+    * ID do Incidente: `CT-AUTH-004`
 
-**Ambiente**: `Desenvolvimento, Staging, Produção`
+    * Título: `Falha ao fazer login com credenciais inválidas`
 
-**Prioridade**: `Crítica, Alta, Média, Baixa`
+    * Prioridade: `Baixa`
 
-**Severidade**: `Crítica, Alta, Média, Baixa`
+    * Severidade: `Baixa`
 
-**Prioridade**: `Alta, Média, Baixa`
+    * Descrição: `O teste CT-AUTH-004, que visava testar o login com credenciais inválidas, falhou.`
 
-**Descrição**:
-`Detalhes do problema, incluindo o comportamento inesperado do sistema.`
+    * Passos para Reproduzir:
 
-**Passos para Reproduzir**:
-`Lista numerada e clara de como reproduzir o bug, ex: "1. Acessar a página de login. 2. Inserir credenciais válidas. 3. Clicar em Entrar."`
+        `O teste tentou fazer login com credenciais inválidas (login_invalid).`
 
-**Resultado Esperado**:
-`O que a aplicação deveria fazer, ex: "O usuário deve ser redirecionado para a página inicial."`
+    * Resultado Esperado: `O sistema deveria retornar um status code 400.`
 
-**Resultado Real**:
-`O que a aplicação realmente fez, ex: "O sistema exibe uma mensagem de erro: 'Invalid credentials'."`
+    * Resultado Real: `O sistema retornou o status code 401 (Unauthorized), indicando que o endpoint de login não estava validando corretamente a requisição.`
 
-**Evidências**:
-`Anexar capturas de tela, vídeos ou logs do console para ajudar na análise.`
+    * Evidências: `Log do Robot Framework e Relatório do Robot Framework.`
+
+* BUG-002
+
+    * ID do Incidente: `CT-AUTH-007`
+
+    * Título: `Falha ao obter informações do usuário com token inválido`
+
+    * Prioridade: `Baixa`
+
+    * Severidade: `Baixa`
+
+    * Descrição: `O teste CT-AUTH-007, que tentava obter informações do usuário usando um token inválido (token_wrong), falhou.`
+
+    * Passos para Reproduzir:
+
+        `O teste tentou acessar o endpoint /auth/me com um token inválido.`
+
+    * Resultado Esperado: `O sistema deveria retornar um status code 403 (Forbidden).`
+
+    * Resultado Real: `O sistema retornou o status code 401 (Unauthorized).`
+
+    * Evidências: `Log do Robot Framework e Relatório do Robot Framework`.
+
+## Resumo da Execução
+
+Um total de 13 testes foram executados, resultando em 11 aprovados e 2 falhas. O tempo total de execução foi de 4 segundos.

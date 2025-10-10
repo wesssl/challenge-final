@@ -3,12 +3,9 @@
 Challenge final. Projeto desenvolvido para a conclusão do Programa de Bolsas da empresa Compass UOL. Trilha "AWS, AI & Software Quality Engineering".
 
 
-[PLANO DE TESTE](PLANO%20DE%20TESTE.md)
+## [PLANO DE TESTE](PLANO%20DE%20TESTE.md)
 
-
----
-
-## Informações de Execução
+## **Informações de Execução**
 
 Esta seção detalha os pré-requisitos e os comandos necessários para executar os testes automatizados do projeto utilizando o **Robot Framework**.
 

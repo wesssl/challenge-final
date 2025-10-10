@@ -131,6 +131,7 @@ O foco inicial da automação será o fluxo principal de reserva da aplicação,
 
     * `CT-WEB-AUTH-003`: Testar o login com credenciais válidas.
 
+    ```bash
     * `CT-WEB-MOVIE-001`: Testar a exibição da página inicial.
 
     * `CT-WEB-MOVIE-002`: Testar a navegação da lista de filmes.
@@ -142,12 +143,15 @@ O foco inicial da automação será o fluxo principal de reserva da aplicação,
     * `CT-WEB-RESERVE-003`: Testar o processo de checkout e finalização da compra.
 
     * `CT-WEB-NAV-001`: Testar a navegação do cabeçalho em todas as páginas.
+    ```
 
 ## 9. Registro de Incidente (Bug Report)
 
-[Report de Bugs](report.md)
+### [Report de Bugs](report.md)
 
 Para o registro de bugs, utilizaremos a seguinte padronização:
+
+### `Código do Bug`
 
 **ID do Incidente**: `Sequencial e Único`
 
